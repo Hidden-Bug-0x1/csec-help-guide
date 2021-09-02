@@ -1,0 +1,44 @@
+:root {
+  --main: rgb(46, 7, 136);
+  --main-txt-color: white;
+}
+
+.disable-select {
+  user-select: none;
+}
+
+.card {
+  margin: auto;
+  background-color: var(--main);
+  color: var(--main-txt-color);
+}
+
+.container {
+  margin: auto;
+  width: 80%;
+  height: 5%;
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  padding: 10px 0px;
+  margin-top: 10px;
+}
+
+.arrow {
+  display: inline-block;
+  border: solid var(--main-txt-color);
+  border-width: 4px 4px 0px 0px;
+  margin-right: 10%;
+  vertical-align: middle;
+  align-self: center;
+  width: 10px;
+  height: 10px;
+}
+
+.arrow.up {
+  transform: rotate(-45deg);
+}
+
+.arrow.down {
+  transform: rotate(135deg);
+}

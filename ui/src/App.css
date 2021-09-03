@@ -1,6 +1,9 @@
 :root {
-  --main: rgb(46, 7, 136);
-  --main-txt-color: white;
+  --primary: #8090c2;
+  --primary-txt-color: white;
+  --secondary: #c2b280;
+  --danger: #c28090;
+  --info: #80c2b2;
 }
 
 .disable-select {
@@ -9,8 +12,10 @@
 
 .card {
   margin: auto;
-  background-color: var(--main);
-  color: var(--main-txt-color);
+  background-color: var(--primary);
+  color: var(--primary-txt-color);
+  display: flex;
+  justify-content: center;
 }
 
 .container {
@@ -26,7 +31,7 @@
 
 .arrow {
   display: inline-block;
-  border: solid var(--main-txt-color);
+  border: solid var(--primary-txt-color);
   border-width: 4px 4px 0px 0px;
   margin-right: 10%;
   vertical-align: middle;
@@ -41,4 +46,12 @@
 
 .arrow.down {
   transform: rotate(135deg);
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+}
+
+.bg-info {
+  background-color: var(--info);
 }

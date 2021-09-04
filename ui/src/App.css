@@ -6,6 +6,41 @@
   --info: #80c2b2;
 }
 
+@keyframes fadein {
+  0% { 
+    /* transform: scaleY(0); */
+    max-height: 0px;
+  }
+  100% { 
+    /* transform: scaleY(1);  */
+    max-height: 1000px;
+  }
+}
+
+@keyframes fadeout {
+  0% { 
+    /* transform: scaleY(1);  */
+    max-height: 300px;
+  }
+  100% { 
+    /* transform: scaleY(0);  */
+    max-height: 0px;
+  }
+}
+
+.fadein {
+  height: 0px;
+  transform-origin: top;
+  overflow: hidden;
+  animation: fadein 2s;
+}
+
+.fadeout {
+  animation: fadeout 1s;
+  transform-origin: top;
+  overflow: hidden;
+}
+
 .disable-select {
   user-select: none;
 }
@@ -54,4 +89,18 @@
 
 .bg-info {
   background-color: var(--info);
+}
+
+.mt-0 {
+  margin-top: 0;
+}
+
+.center {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+}
+
+.flex-col {
+  flex-direction: column;
 }

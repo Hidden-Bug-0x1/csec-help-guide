@@ -4,20 +4,32 @@ import React, { useState } from 'react';
 const Heading = (props) => {
   const { title, id } = props;
   const [isOpen, setOpen] = useState(false);
+  const [tm, setTM] = useState(()=>{});
 
   const handleClick = () => {
     let arrow = document.getElementById(`arrow${id}`);
-    let classes = arrow.classList;
-    switch (classes[1]) {
+    let aclasses = arrow.classList;
+
+    let childcont = document.getElementById(`content${id}`);
+    let cclasses = childcont.classList;
+    
+    switch (aclasses[1]) {
       case "down":
-        classes.remove("down");
-        classes.add("up");
+        aclasses.remove("down");
+        aclasses.add("up");
+        cclasses.remove("fadeout");
+        cclasses.add("fadein");
         setOpen(true);
+        clearTimeout(tm);
         break;
       case "up":
-        classes.remove("up");
-        classes.add("down");
-        setOpen(false);
+        aclasses.remove("up");
+        aclasses.add("down");
+        cclasses.remove("fadein");
+        cclasses.add("fadeout");
+        setTM(setTimeout(() => {
+          setOpen(false);
+        }, 1000));
         break;
       default:
         break;
@@ -31,11 +43,14 @@ const Heading = (props) => {
         <div id={`arrow${id}`} className="arrow down"></div>
 
       </div>
-      {isOpen &&
-        <div className="container bg-secondary">
+        <div id={`content${id}`} className="container bg-secondary mt-0"
+        style={{
+          display: (isOpen ? "block":"none")
+        }}>
           {props.children}
         </div>
-      }
+      
+      
     </>
   );
 };

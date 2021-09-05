@@ -16,17 +16,17 @@ import WeakPassword from './pages/WeakPassword';
 function App() {
 	return (
 		<>
-			<h1 className='card'>Report Your Problem</h1>
-			<Heading title='Suspicious Email' id={1}>
+			<h1 className='card'>Luxland Helpline</h1>
+			<Heading title='Identify Suspicious Emails' id={1}>
 				<SuspiciousEmailPage />
 			</Heading>
-			<Heading title='Inappropriate Post' id={2}>
+			<Heading title='Identify Inappropriate Posts' id={2}>
 				<InappropriatePost />
 			</Heading>
-			<Heading title='Insecure Account Settings' id={3}>
+			<Heading title='Secure Account Settings' id={3}>
 				<InsecureAccount />
 			</Heading>
-			<Heading title='Weak Password' id={4}>
+			<Heading title='Strengthen Password' id={4}>
 				<WeakPassword />
 			</Heading>
 		</>

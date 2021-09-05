@@ -57,7 +57,7 @@ li {
 	background-color: var(--primary);
 	color: var(--primary-txt-color);
 	display: flex;
-	justify-content: center;
+	/* justify-content: center; */
 }
 
 .container {
@@ -65,8 +65,8 @@ li {
 	width: 80%;
 	height: 5%;
 	display: flex;
-	justify-content: space-between;
-	align-content: center;
+	/* justify-content: space-between; */
+	/* align-content: center; */
 	padding: 10px 0px;
 	margin-top: 10px;
 }
@@ -133,6 +133,7 @@ li {
 	display: flex;
 	flex-direction: row;
 	align-self: center;
+	justify-content: center;
 }
 
 .flex-col {

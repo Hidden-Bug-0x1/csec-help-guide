@@ -21,7 +21,7 @@ const Heading = (props) => {
 		<>
 			<div className='container card disable-select' onClick={handleClick}>
 				<h1 className='card'>{title}</h1>
-				<div id={`arrow${id}`} className='arrow down'></div>
+				<div id={`arrow${id}`} className='arrow down center'></div>
 			</div>
 
 			<div className='collapsible'>

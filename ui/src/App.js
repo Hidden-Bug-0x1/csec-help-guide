@@ -16,7 +16,9 @@ import WeakPassword from './pages/WeakPassword';
 function App() {
 	return (
 		<>
-			<h1 className='card'>Luxland Helpline</h1>
+			<h1 className='card center' style={{ display: 'flex' }}>
+				Luxland Helpline
+			</h1>
 			<Heading title='Identify Suspicious Emails' id={1}>
 				<SuspiciousEmailPage />
 			</Heading>

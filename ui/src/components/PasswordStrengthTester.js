@@ -11,7 +11,7 @@ const PasswordStrengthTester = () => {
 
 	const isSecure = () => {
 		if (pswd.length === 0) {
-			return ['Please enter you password above'];
+			return ['Please enter your password above'];
 		}
 
 		let fails = [];

@@ -2,57 +2,43 @@ import React, { useState } from 'react';
 
 // add prop types
 const Heading = (props) => {
-  const { title, id } = props;
-  const [isOpen, setOpen] = useState(false);
-  const [tm, setTM] = useState(()=>{});
+	const { title, id } = props;
+	const [isOpen, setOpen] = useState(false);
+	// const [tm, setTM] = useState(0);
 
-  const handleClick = () => {
-    let arrow = document.getElementById(`arrow${id}`);
-    let aclasses = arrow.classList;
+	const handleClick = () => {
+		let dropdown = document.getElementById(`toggler${id}`);
+		let arrow = document.getElementById(`arrow${id}`);
 
-    let childcont = document.getElementById(`content${id}`);
-    let cclasses = childcont.classList;
-    
-    switch (aclasses[1]) {
-      case "down":
-        aclasses.remove("down");
-        aclasses.add("up");
-        cclasses.remove("fadeout");
-        cclasses.add("fadein");
-        setOpen(true);
-        clearTimeout(tm);
-        break;
-      case "up":
-        aclasses.remove("up");
-        aclasses.add("down");
-        cclasses.remove("fadein");
-        cclasses.add("fadeout");
-        setTM(setTimeout(() => {
-          setOpen(false);
-        }, 1000));
-        break;
-      default:
-        break;
-    }
-  };
+		dropdown.classList.toggle('collapsed');
+		arrow.classList.toggle('down');
+		arrow.classList.toggle('up');
 
-  return (
-    <>
-      <div className="container card disable-select" onClick={handleClick}>
-        <h1 className="card">{title}</h1>
-        <div id={`arrow${id}`} className="arrow down"></div>
+		setOpen(isOpen ? false : true);
+	};
 
-      </div>
-        <div id={`content${id}`} className="container bg-secondary mt-0"
-        style={{
-          display: (isOpen ? "block":"none")
-        }}>
-          {props.children}
-        </div>
-      
-      
-    </>
-  );
+	return (
+		<>
+			<div className='container card disable-select' onClick={handleClick}>
+				<h1 className='card'>{title}</h1>
+				<div id={`arrow${id}`} className='arrow down'></div>
+			</div>
+
+			<div className='collapsible'>
+				<div id={`toggler${id}`} className='collapsible-wrapper collapsed'>
+					<div
+						id={`content${id}`}
+						className='container bg-secondary mt-0'
+						style={{
+							display: isOpen ? 'block' : 'none',
+						}}
+					>
+						{props.children}
+					</div>
+				</div>
+			</div>
+		</>
+	);
 };
 
 export default Heading;

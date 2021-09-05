@@ -1,106 +1,140 @@
 :root {
-  --primary: #8090c2;
-  --primary-txt-color: white;
-  --secondary: #c2b280;
-  --danger: #c28090;
-  --info: #80c2b2;
+	--primary: #8090c2;
+	--primary-txt-color: white;
+	--secondary: #c2b280;
+	--danger: #c28090;
+	--info: #80c2b2;
 }
 
-@keyframes fadein {
-  0% { 
-    /* transform: scaleY(0); */
-    max-height: 0px;
-  }
-  100% { 
-    /* transform: scaleY(1);  */
-    max-height: 1000px;
-  }
+.line {
+	height: 2px;
+	width: 80%;
+	background-color: var(--primary);
 }
 
-@keyframes fadeout {
-  0% { 
-    /* transform: scaleY(1);  */
-    max-height: 300px;
-  }
-  100% { 
-    /* transform: scaleY(0);  */
-    max-height: 0px;
-  }
+.tab-l {
+	margin-left: 10%;
 }
 
-.fadein {
-  height: 0px;
-  transform-origin: top;
-  overflow: hidden;
-  animation: fadein 2s;
+li {
+	font-size: 2em;
 }
 
-.fadeout {
-  animation: fadeout 1s;
-  transform-origin: top;
-  overflow: hidden;
+.collapsible-wrapper {
+	display: flex;
+	overflow: hidden;
+}
+.collapsible-wrapper:after {
+	content: '';
+	height: 50px;
+	transition: height 0.3s linear, max-height 0s 0.3s linear;
+	max-height: 0px;
+}
+.collapsible {
+	transition: margin-bottom 0.3s cubic-bezier(0, 0, 0, 1);
+	margin-bottom: 0;
+	max-height: 1000000px;
+}
+.collapsible-wrapper.collapsed > .collapsible {
+	margin-bottom: -2000px;
+	transition: margin-bottom 0.3s cubic-bezier(1, 0, 1, 1), visibility 0s 0.3s,
+		max-height 0s 0.3s;
+	visibility: hidden;
+	max-height: 0;
+}
+.collapsible-wrapper.collapsed:after {
+	height: 0;
+	transition: height 0.3s linear;
+	max-height: 50px;
 }
 
 .disable-select {
-  user-select: none;
+	user-select: none;
 }
 
 .card {
-  margin: auto;
-  background-color: var(--primary);
-  color: var(--primary-txt-color);
-  display: flex;
-  justify-content: center;
+	margin: auto;
+	background-color: var(--primary);
+	color: var(--primary-txt-color);
+	display: flex;
+	justify-content: center;
 }
 
 .container {
-  margin: auto;
-  width: 80%;
-  height: 5%;
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
-  padding: 10px 0px;
-  margin-top: 10px;
+	margin: auto;
+	width: 80%;
+	height: 5%;
+	display: flex;
+	justify-content: space-between;
+	align-content: center;
+	padding: 10px 0px;
+	margin-top: 10px;
 }
 
 .arrow {
-  display: inline-block;
-  border: solid var(--primary-txt-color);
-  border-width: 4px 4px 0px 0px;
-  margin-right: 10%;
-  vertical-align: middle;
-  align-self: center;
-  width: 10px;
-  height: 10px;
+	display: inline-block;
+	border: solid var(--primary-txt-color);
+	border-width: 4px 4px 0px 0px;
+	margin-right: 10%;
+	vertical-align: middle;
+	width: 10px;
+	height: 10px;
 }
 
 .arrow.up {
-  transform: rotate(-45deg);
+	transform: rotate(-45deg);
 }
 
 .arrow.down {
-  transform: rotate(135deg);
+	transform: rotate(135deg);
 }
 
 .bg-secondary {
-  background-color: var(--secondary);
+	background-color: var(--secondary);
+}
+
+.bg-danger {
+	background-color: var(--danger);
 }
 
 .bg-info {
-  background-color: var(--info);
+	background-color: var(--info);
 }
 
 .mt-0 {
-  margin-top: 0;
+	margin-top: 0;
+}
+.mt-1 {
+	margin-top: 5px;
+}
+.mt-2 {
+	margin-top: 10px;
+}
+.mt-3 {
+	margin-top: 15px;
+}
+.m-0 {
+	margin: 0;
+}
+.mb-0 {
+	margin-bottom: 0;
+}
+.m-1 {
+	margin: 5px;
+}
+.m-2 {
+	margin: 10px;
+}
+.px-3 {
+	padding: 0px 15px;
 }
 
 .center {
-  display: flex;
-  flex-direction: row;
-  align-self: center;
+	display: flex;
+	flex-direction: row;
+	align-self: center;
 }
 
 .flex-col {
-  flex-direction: column;
+	flex-direction: column;
 }

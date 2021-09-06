@@ -3,8 +3,8 @@ import React from 'react';
 const InappropriatePost = () => {
 	return (
 		<div className='card bg-secondary flex-col'>
-			<h1 className='tab-l'>Characteristics:</h1>
-			<ul className='tab-l mt-0'>
+			<h1 className='tab-l mb-0'>Characteristics:</h1>
+			<ul className='tab-l mt-2'>
 				<li>Contains, or tags, people without their consent</li>
 				<li>
 					Reveals <span style={{ textDecoration: 'underline' }}>P</span>
@@ -22,6 +22,7 @@ const InappropriatePost = () => {
 				<li>Reveals future plans</li>
 				<li>Spreads rumors</li>
 				<li>Is emotionally damaging to others</li>
+				<li>Reveals habits and routines</li>
 			</ul>
 		</div>
 	);

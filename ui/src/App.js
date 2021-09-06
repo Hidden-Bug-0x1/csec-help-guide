@@ -12,6 +12,8 @@ import SuspiciousEmailPage from './pages/SuspiciousEmailPage';
 import InappropriatePost from './pages/InappropriatePost';
 import InsecureAccount from './pages/InsecureAccount';
 import WeakPassword from './pages/WeakPassword';
+import SocialEngineering from './pages/SocialEngineering';
+import Miscellaneous from './pages/Miscellaneous';
 
 function App() {
 	return (
@@ -30,6 +32,12 @@ function App() {
 			</Heading>
 			<Heading title='Strengthen Password' id={4}>
 				<WeakPassword />
+			</Heading>
+			<Heading title='Identify Social Engineering Attacks' id={5}>
+				<SocialEngineering />
+			</Heading>
+			<Heading title='Other Tips' id={6}>
+				<Miscellaneous />
 			</Heading>
 		</>
 	);

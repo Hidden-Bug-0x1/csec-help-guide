@@ -6,6 +6,7 @@ import './App.css';
 
 // componenets
 import Heading from './components/Heading';
+import Footer from './components/Footer';
 
 // pages
 import SuspiciousEmailPage from './pages/SuspiciousEmailPage';
@@ -39,6 +40,8 @@ function App() {
 			<Heading title='Other Tips' id={6}>
 				<Miscellaneous />
 			</Heading>
+
+			<Footer />
 		</>
 	);
 }

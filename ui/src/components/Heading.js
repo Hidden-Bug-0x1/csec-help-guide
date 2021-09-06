@@ -18,8 +18,8 @@ const Heading = (props) => {
 	};
 
 	return (
-		<>
-			<div className='container card disable-select' onClick={handleClick}>
+		<div onClick={handleClick} className='mb-3'>
+			<div className='container card disable-select'>
 				<h1 className='card'>{title}</h1>
 				<div id={`arrow${id}`} className='arrow down center'></div>
 			</div>
@@ -37,7 +37,7 @@ const Heading = (props) => {
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 };
 
